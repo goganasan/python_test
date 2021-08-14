@@ -7,10 +7,18 @@ import json
 
 # functions
 
+def json_decode(string):
+    try:
+        return json.loads(string)
+    except:
+        print('Error then decode json')
+        return {}
+
+
 def prepare_response(bytes_response):
     try:
         str_response = bytes_response.decode("UTF-8")
-        return json.loads(str_response)
+        return json_decode(str_response)
     except:
         print('Error then convert Bytes to List')
         return None
