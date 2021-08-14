@@ -51,7 +51,7 @@ def test_prepare_response_type_check(response, response_type, expected):
                                                  [{'service': '1', 'type': 'Default'}]),
                                                  ('string', 'string'),
                                                  ([], []),
-                                                 ({}, []),
+                                                 ({}, {}),
                                                  (None, None)])
 def test_type_filter(list_data, expected):
     filtering_list = type_filter(list_data)

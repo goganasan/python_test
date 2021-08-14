@@ -35,10 +35,8 @@ def send_request(payload, headers=None):
 
 
 def type_filter(data):
-    try:
+    if isinstance(data, list):
         data = list(filter(lambda x: x['type'] == config.service_type, data))
-    except:
-        print('Error then filtering services List')
     return data
 
 
